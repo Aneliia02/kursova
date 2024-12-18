@@ -1,7 +1,6 @@
 <?php 
 require_once('includes/connect.php');
 require_once('functions/common_function.php');
-//session_start();  
 
 ?>
 
@@ -42,7 +41,7 @@ require_once('functions/common_function.php');
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cart.php"> <i class="fa-solid fa-cart-shopping"></i> <sup> <?php cart_items();?></sup></a>
+          <a class="nav-link" href="cart.php"> <i class="fa-solid fa-cart-shopping"></i> <sup><?php cart_items();?></sup></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Total Price: <?php total_cart_price();?></a>
@@ -61,13 +60,7 @@ require_once('functions/common_function.php');
 <!-- -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <ul class="navbar-nav me-auto">
-       <!--  <li class="nav-item">
-          <a class="nav-link" href="#">Welcome Guest</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_login.php">Login</a>
-        </li> -->
-        <?php if(!isset($_SESSION['username'])){
+    <?php if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
           <a class='nav-link' href='#'>Welcome Guest</a>
         </li>";
@@ -83,9 +76,6 @@ require_once('functions/common_function.php');
           echo "<li class='nav-item'><a class='nav-link' href='./users_area/logout.php'>Logout</a></li>";
         }
         ?>
-        <li>
-          <a class="nav-link" href="./admin_area/index.php">Admin</a>
-        </li>
     </ul>
 </nav>
 <!-- -->
@@ -101,7 +91,7 @@ require_once('functions/common_function.php');
         <!-- products -->
         <div class="row">
         <?php
-        getproducts();
+        get_all_products();
         get_unique_categories();
         get_unique_brands();
         getIPAddress();
@@ -147,10 +137,10 @@ require_once('functions/common_function.php');
 
 <!--footer-->
  
-<div class="bg-info p-3 text-center footer">
+<div class="bg-info p-3 text-center">
 <p>© 2024 All rights reserved</p>
 </div> 
 
  </div>
 </body>
-</html> 
+</html>
